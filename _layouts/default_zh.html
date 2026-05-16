@@ -4,7 +4,9 @@ main_title: 记住亚伦·斯沃茨（Remember Aaron Swartz）
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
-    <title>{{ page.main_title }}</title>
+    {% assign site_title = "记住亚伦·斯沃茨（Remember Aaron Swartz）" %}
+    {% assign page_title = page.title | default: site_title %}
+    <title>{% if page_title == site_title %}{{ site_title }}{% else %}{{ page_title }} · 记住亚伦·斯沃茨{% endif %}</title>
     <link rel="stylesheet" href="/stylesheets/reset.css" />
     <link rel="stylesheet" href="/stylesheets/tribute.css" />
     <link rel="stylesheet" href="/stylesheets/font-awesome.css"/>
@@ -17,7 +19,7 @@ main_title: 记住亚伦·斯沃茨（Remember Aaron Swartz）
     <meta property="og:type" content="website"/>
     <meta property="og:image" content="http://farm3.staticflickr.com/2552/3835494997_edc2e1dc12.jpg"/>
     <meta property="og:url" content="http://www.rememberaaronsw.com"/>
-    <meta property="og:site_name" content="{{ page.main_title }}"/>
+    <meta property="og:site_name" content="{{ site_title }}"/>
     <meta property="og:admins" content="1800517"/>
   </head>
   <body>
@@ -32,7 +34,7 @@ main_title: 记住亚伦·斯沃茨（Remember Aaron Swartz）
 
     <div id="wrapper">
       <header>
-        <h1>{{ page.main_title }}</h1>
+        <h1>{{ page_title }}</h1>
         {% include links_zh.html %}
         <div class='clearfix'></div>
       </header>
