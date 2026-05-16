@@ -47,13 +47,13 @@ main_title: 记住亚伦·斯沃茨（Remember Aaron Swartz）
             <i class="quotemarker icon-quote-left"></i>
           </header>
           {% if post.type == 'image' %}
-          <div class="content"><a href="{{ post.link || '#' }}">{{ content }}</a></div>
+          <div class="content"><a href="{{ post.link or '#' }}">{{ content }}</a></div>
           {% else %}
           <div class="content">{{ content }}</div>
           {% endif %}
           <footer>
-            <a href="{{ post.link || post.url || '#' }}">{{ post.author }}</a>
-            <div class='date'><a href='{{ post.link || post.url }}'>{{ post.date | date: "%Y-%m-%d" }}</a></div>
+            <a href="{{ post.link or post.url or '#' }}">{{ post.author }}</a>
+            <div class='date'><a href='{{ post.link or post.url }}'>{{ post.date | date: "%Y-%m-%d" }}</a></div>
           </footer>
         </article>
       </div>
